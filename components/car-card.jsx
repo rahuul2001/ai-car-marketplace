@@ -12,6 +12,7 @@ import { toggleSavedCar } from "@/actions/car-listing";
 import { useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import useFetch from "@/hooks/use-fetch";
+import { ProtectedCarLink } from "@/components/protected-car-link";
 
 export const CarCard = ({ car }) => {
   const { isSignedIn } = useAuth();
@@ -126,14 +127,11 @@ export const CarCard = ({ car }) => {
         </div>
 
         <div className="flex justify-between">
-          <Button
-            className="flex-1"
-            onClick={() => {
-              router.push(`/cars/${car.id}`);
-            }}
-          >
-            View Car
-          </Button>
+          <ProtectedCarLink carId={car.id} className="flex-1">
+            <Button className="w-full">
+              View Car
+            </Button>
+          </ProtectedCarLink>
         </div>
       </CardContent>
     </Card>
