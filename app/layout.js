@@ -19,9 +19,9 @@ export default function RootLayout({ children }) {
 
           <main className="min-h-screen">{children}</main>
 
-          <footer className="bg-blue-500 py-12">
+          <footer className="dotted-background py-12">
             <div className="container mx-auto text-center">
-              <p>Made with ❤️ by Rahul Tangsali</p>
+              <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Made with ❤️ by Rahul Tangsali</p>
             </div>
           </footer>
         </body>
